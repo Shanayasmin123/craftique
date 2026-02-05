@@ -1,0 +1,27 @@
+body{
+    background-color: rgb(243, 233, 208)  !important  ;
+}
+
+.navbar {
+    background-color: rgb(243, 233, 208);
+}
+
+.frm{
+    text-align: center;
+}
+
+.btn a {
+    color: rgb(218, 199, 170);
+    background-color: black;
+    text-decoration: none;  /* Removes underline */
+    border: none;           /* Removes border if any */
+    outline: none;          /* Removes focus outline */
+    display: inline-block;  
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn a:hover {
+    background-color: rgb(108, 73, 29);
+}
+

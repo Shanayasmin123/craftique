@@ -1,0 +1,130 @@
+body {
+    overflow-x: hidden;
+    background-color: rgb(243, 233, 208)  !important  ;
+    margin: 0;
+}
+
+.navbar {
+    background-color: rgb(243, 233, 208);
+}
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* full screen height */
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* keeps image from stretching */
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: black; 
+}
+
+.hed {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: bold;
+  margin: 0 0 0.5rem;
+}
+
+
+.par {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0;
+}
+
+
+
+
+.footer{
+    background-color: rgb(77, 62, 40);
+}
+
+
+
+
+
+.footer {
+  background-color: rgb(99, 73, 43);
+  color: #eee;
+  padding: 40px 20px 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer h2, .footer h3 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.footer p, .footer a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section.cntct {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+.footer-section.social a {     
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #f2eaea;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #e5cd9a;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
+
+

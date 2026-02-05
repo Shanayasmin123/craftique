@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>LOGIN PAGE</title>
+</head>
+<body>
+    <div class="login">
+    <h2>craftique</h2>
+    <p>Login Your Account</p>
+    <form id="Form" autocomplete="off">
+      <input type="email" id="email" class="input" placeholder="Enter your email" autocomplete="off" />
+      <span id="emailerror" class="error"></span><br><br>
+      <input type="password" id="password" class="input" placeholder="Enter your password" autocomplete="new-password" />
+      <span id="passworderror" class="error"></span><br><br>
+      <button type="submit" class="btn" >Login</button>
+    </form>
+  </div>
+
+  <script>
+    
+   document.getElementById("Form").addEventListener("submit" ,function(event){
+    event.preventDefault();
+
+    var email = document.getElementById("email").value.trim();
+    var password = document.getElementById("password").value.trim();
+
+    var emailError = document.getElementById("emailerror");
+    var passwordError = document.getElementById("passworderror");
+
+    // clear previous error messages
+    emailError.textContent = "";
+    passwordError.textContent = "";
+
+    var isValid = true;
+
+    // Email validation
+    var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if(email === ""){
+        emailError.textContent = "Email Is Required";
+        isValid = false;
+    } else if(!emailPattern.test(email)){
+        emailError.textContent = "Invalid Email Format";
+        isValid = false;
+    }
+
+    // Password validation
+    // Password must contain: at least 1 uppercase, 1 lowercase, 1 digit, min 6 chars
+    var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/;
+
+    if(password === ""){
+        passwordError.textContent = "Password Is Required";
+        isValid = false;
+    } else if(!passwordPattern.test(password)){
+        passwordError.textContent = "Password must contain: at least 1 uppercase, 1 lowercase, 1 digit, min 6 chars";
+        isValid = false;
+    }
+
+    if(!isValid){
+        return;
+    } else {
+        alert("Welcome To Our Space!!");
+        document.getElementById("Form").reset();
+        clearErrors();
+        window.location.href = "home.html";     // link to home page
+    }
+
+    function clearErrors(){
+        document.querySelectorAll(".error").forEach((n)=>{
+            n.textContent=""
+        })
+    }
+
+   });
+</script>
+
+
+
+</body>
+</html>
